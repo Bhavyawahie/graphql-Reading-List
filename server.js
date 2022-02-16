@@ -1,9 +1,9 @@
 const express = require('express')
+const app = express()
 const {graphqlHTTP} = require('express-graphql')
 const morgan = require('morgan')
 const colors = require('colors')
-
-const app = express()
+const schema = require('./schema/schema')
 app.use(morgan('dev'))
 app.use('/graphql', graphqlHTTP({
     schema: schema,
